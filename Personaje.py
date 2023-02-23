@@ -1,10 +1,11 @@
 
-class Personaje: 
-    
+class Personaje:
+    #Creamos al constructor
+    def __init__(self, esp, nom, alt):  #(..)Son los parametros
     #atributos del personaje
-    especie = "Humano"
-    nombre = "Je"
-    altura = 1.90 
+        self.especie = esp
+        self.nombre = nom
+        self.altura = alt 
     
     #metodos Personaje
     def correr(self,status):
