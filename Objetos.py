@@ -21,7 +21,7 @@ cargaV= int(input ("¿Cuantas balas se recargaran al Villano? "))
 Heroe = Personaje (espH, nomH, altH)
 Villano = Personaje (espV, nomV, altV)
 
-#3. Acceder a sus atributos y metodos del cada OBJ
+#4. Acceder a sus atributos y metodos del cada OBJ
 print("")
 print ("## Atributos y Metodos del Heroe ## ")
 print ("El personaje pertenece a la raza: " + Heroe.especie) 
