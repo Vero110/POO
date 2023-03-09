@@ -19,6 +19,11 @@ cargaV= int(input ("¿Cuantas balas se recargaran al Villano? "))
 
 #3. Creamos 2 objetos 
 Heroe = Personaje (espH, nomH, altH)
+
+
+
+
+
 Villano = Personaje (espV, nomV, altV)
 
 #4. Acceder a sus atributos y metodos del cada OBJ

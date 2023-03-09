@@ -16,23 +16,18 @@ def agregarBoton():
     botonNuevo = Button(seccion3, text ="Boton nuevo")
     botonNuevo.pack()
 
-    
-
+     
 #1. Crear ventana. Instanciamos un objeto Ventana
 ventana = Tk() 
 ventana.title("Practica 11:3 Frames")
 ventana.geometry("600x400")
-
 #2. Definir secciones de la ventana
 seccion1 = Frame(ventana, bg = "#ccccff")
 seccion1.pack(expand=True, fill = 'both')
-
 seccion2 = Frame(ventana, bg = "pink") 
 seccion2.pack(expand=True, fill = 'both')
-
 seccion3 = Frame (ventana, bg = "gray")
 seccion3.pack(expand=True, fill = 'both')
-
 #3. Botones
 botonAzul = Button(seccion1, text = "boton azul", fg = "red", command = mostrarMensaje) 
 botonAzul.place(x = 60, y = 60)
