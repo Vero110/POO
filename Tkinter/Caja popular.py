@@ -8,6 +8,9 @@ ventana.geometry("200x100")
 class AplicacionCajaPopular:
 
     num_cuenta = input (int ("Ingrese el numero de cuenta: "))
+    
+    
+    
 
 
 
