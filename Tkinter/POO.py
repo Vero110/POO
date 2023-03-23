@@ -36,3 +36,4 @@ label_resultado.pack()
 
 # Iniciar la ventana
 ventana.mainloop()
+
