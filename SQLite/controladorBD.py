@@ -32,7 +32,8 @@ class controladorBD:
         else: 
             #3. Preparar el CURSOR, DATOS, QUERYSQL
             cursor = conx.cursor()
-            datos = (nom, cor, con) 
+            conH = self.encriptarCon(con) #la contraseña encriptada guardamela en conH
+            datos = (nom, cor, conH) 
             qrInsert = "insert into TBRegistrados(Nombre, Correo, Contraseña) values(?,?,?)"
             
             #4. Ejecutar insert y cerramos conexion 
@@ -41,4 +42,38 @@ class controladorBD:
             conx.close
             messagebox.showinfo("Listo", "Usuario guardado")
     
-   
+       #Metodo para encriptar contraseñas
+    def encriptarCon(self, con): 
+        conPlana = con 
+        conPlana = conPlana.encode() #convertimos con a bytes
+        sal = bcrypt.gensalt() #algoritmo de aleatoridad
+        conHa = bcrypt.hashpw(conPlana, sal) #crea la contraseña encriptada
+        print (conHa)
+        #enviamos la contraseña encryptada
+        return conHa      
+    
+        #Metodo para buscar 1 usuario 
+    def consultarUsuario(self, id):
+        #1. Preparar una conexion 
+        conx = self.conexionBD()
+        #2. verificar si id contiene aldo 
+        if (id == ""): 
+            messagebox.showwarning("Cuidado", "Id vacio, escribe algo valido")
+            conx.close()
+        else:
+            try:
+                #3. preparar lo necesario (CURSOR Y EL QUERY)
+                cursor=conx.cursor()
+                selectQry = "select * from TBRegistrados where id = " + id
+                
+                #4. ejecutar y guardar la consulta
+                cursor.execute(selectQry)
+                rsUsuario = cursor.fetchall()
+                conx.close()
+                
+                return rsUsuario
+            
+            except sqlite3.OperationalError:
+                print("Error de consulta")
+            
+        
