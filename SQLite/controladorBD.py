@@ -56,7 +56,7 @@ class controladorBD:
     def consultarUsuario(self, id):
         #1. Preparar una conexion 
         conx = self.conexionBD()
-        #2. verificar si id contiene aldo 
+        #2. verificar si id contiene algo 
         if (id == ""): 
             messagebox.showwarning("Cuidado", "Id vacio, escribe algo valido")
             conx.close()
@@ -75,5 +75,21 @@ class controladorBD:
             
             except sqlite3.OperationalError:
                 print("Error de consulta")
+    
+    def consultaUsuarios(self):
+        #1. Preparar una conexion 
+        conx = self.conexionBD()
+        
+        #2. preparamos el CURSOR y el QUERY
+        cursor = conx.cursor()
+        consultaQry = "SELECT * FROM TBRegistrados"
+        
+        # ejecutar y guardar la consulta 
+        cursor.execute(consultaQry)
+        rsUsuarios = cursor.fetchall()
+        conx.close()
+        
+        return rsUsuarios
+        
             
         

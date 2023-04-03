@@ -1,6 +1,5 @@
 import tkinter as tk
 
-# Base de datos ficticia de usuarios
 usuarios = {'Juan': '1234', 'María': '5678', 'Pedro': '9012'}
 
 # Función que busca un usuario en la base de datos
