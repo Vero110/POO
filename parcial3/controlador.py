@@ -3,6 +3,7 @@ import sqlite3
 import tkinter
 from typing import Self
 import bcrypt
+from ventana import * 
 
 class controlador: 
     def _init_(self):
@@ -18,15 +19,23 @@ class controlador:
         except sqlite3.OperationalError:
             print("No se puede conectar")
     
-    def ingresar(self,varCoN, varIDC, varSaldo):
-
-        # usamos una conexion
+   
+def ingresar_Cuenta (self): 
+    varNoC = self.varNoC.get()
+    saldo = self.VarSaldo.get()
+    
+def consultarUsuarios(self):
+    # 1. usamos conexion 
         conx = self.conexionBD()
+        cursor = conx.cursor()
 
-        if(varCoN=="" or varIDC=="" or varSaldo ==""):
-            messagebox.showwarning("Formulario Incompleto")
-        else:
-            cursor = conx.cursor()
-            qrInsert = "insert into TBCuentas(
+        consultaQry = "SELECT * FROM TBCuentas"
+        cursor.execute(consultaQry)
+        rsConsulta = cursor.fetchall()
+
+    # cerrar Conexion
+        conx.close()
+
+        return rsConsulta
 
        
