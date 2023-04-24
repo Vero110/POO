@@ -2,7 +2,7 @@ import random
 import string
 
 class generadorContraseña:
-    def _init_(self, length=8, include_uppercase=True, include_special_characters=True):
+    def __init__(self, length=8, include_uppercase=True, include_special_characters=True):
         self._length = length
         self._include_uppercase = include_uppercase
         self._include_special_characters = include_special_characters
@@ -25,3 +25,18 @@ class generadorContraseña:
 
         password = "".join(random.choice(chars) for _ in range(self._length))
         return password
+    
+
+
+
+     
+
+
+
+
+
+
+
+
+    
+
