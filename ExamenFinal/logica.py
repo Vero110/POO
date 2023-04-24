@@ -1,23 +1,24 @@
-from tkinter import *
 from tkinter import messagebox
-import tkinter as tk
-from logica import *
-
 class Conversiones:
-    arabigos = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40, 'L': 50}
 
     def NumRomanos(self, numeroRomano):
         romanos = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
         op = 0
+        for i in range(0, len(numeroRomano)-1):
+            if (romanos[numeroRomano[i]] < romanos[numeroRomano[i+1]]):
+                messagebox.showerror("Error", "Ingrese un número romano válido")
+                return
+    
         for i in range(0, len(numeroRomano)):
             if (i == 0 or romanos[numeroRomano[i]] <= romanos[numeroRomano[i - 1]]):
                 op += romanos[numeroRomano[i]]
             else:
                 op += romanos[numeroRomano[i]] - 2 * romanos[numeroRomano[i - 1]]
-        messagebox.showinfo("Nuestro numero Romano a Arabigo es:", op)
+        messagebox.showinfo("Conversión", f"El número romano {numeroRomano} equivale a {op}")
+            
         
-
     def Arabigo(self, numeroArabigo):
+
         if (numeroArabigo == ""):
             messagebox.showerror ( "Ingrese un número")
         else:
@@ -34,7 +35,7 @@ class Conversiones:
             numero = (miles + centenas + decimas + unidades)
             
             if (numeroArabigo <= 50):
-                messagebox.showinfo("El número es: " + numero)
+                messagebox.showinfo("Bien", "El número es: " + numero)
             else:
-                messagebox.showerror( "Ingrese un número menor a 50")
-        
+                messagebox.showerror("Error", "Ingrese un número menor a 50")
+           
