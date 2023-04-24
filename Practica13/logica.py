@@ -4,13 +4,14 @@ import random
 from generadorContra import generadorContraseña
 
 class GeneracionContra:
+    
     def __init__(self):
         self._generator = generadorContraseña()
         self._root = tk.Tk()
         self._root.title("Generador de Contraseña")
 
         self._length_label = tk.Label(self._root, text="Cantidad de carcateres:")
-        self._length_label.grid(row=3, column=0, padx=2, pady=5)
+        self._length_label.grid(row=0, column=0, padx=2, pady=5)
 
         self._length_var = tk.StringVar()
         self._length_var.set("8")
