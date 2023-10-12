@@ -1,0 +1,55 @@
+import tkinter as tk
+from tkinter import simpledialog, messagebox
+
+# Encontrar itinerario de aeropuerto de salida y llegada.
+# Función para imprimir el itinerario partiendo de una fuente dada 'src'
+def print_itinerary(dictionary, src):
+    dest = dictionary.get(src)
+    if not dest:
+        return
+    result_text.insert(tk.END, src + ' --> ' + dest + '\n')
+    print_itinerary(dictionary, dest)
+
+# Función para encontrar el itinerario de la lista dada de aeropuertos de salida y llegada
+def findItinerary(tickets):
+    # Construir un conjunto de aeropuertos de destino
+    destinations = {*tickets.values()}
+
+    # Considerar cada aeropuerto de salida para encontrar el aeropuerto de origen
+    for k, v in tickets.items():
+        # El aeropuerto de origen no estará presente en la lista de aeropuertos de destino
+        if k not in destinations:
+            # Cuando se encuentre el aeropuerto de origen, imprimir el itinerario
+            result_text.delete(1.0, tk.END)  # Limpiar el área de resultados
+            result_text.insert(tk.END, "Itinerario mínimo:\n")
+            print_itinerary(tickets, k)
+            return
+
+# Función para manejar el botón "Calcular Itinerario"
+def calculate_itinerary():
+    try:
+        num_trayectos = int(simpledialog.askstring("Trayectos", "¿Cuántos trayectos son?"))
+        tickets = {}
+        for i in range(num_trayectos):
+            origen = simpledialog.askstring("Origen", f"Parada inicio {i + 1}:")
+            destino = simpledialog.askstring("Destino", f"  Parada destino {i + 1}:")
+            tickets[origen] = destino
+
+        findItinerary(tickets)
+    except ValueError:
+        messagebox.showerror("Error", "Ingrese un número válido para la cantidad de trayectos.")
+
+# Crear ventana principal de Tkinter
+root = tk.Tk()
+root.title("Itinerario Mínimo")
+
+# Crear y configurar el botón
+calculate_button = tk.Button(root, text="Calcular Itinerario", command=calculate_itinerary)
+calculate_button.pack()
+
+# Crear y configurar el área de resultados
+result_text = tk.Text(root, height=10, width=40)
+result_text.pack()
+
+# Ejecutar la aplicación de Tkinter
+root.mainloop()
