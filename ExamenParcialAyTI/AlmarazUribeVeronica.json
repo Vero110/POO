@@ -1,0 +1,22 @@
+{
+    "empleados": [
+      {
+        "numero": 2,
+        "nombre": "Veronica",
+        "apellido": "Almaraz",
+        "fecha_nacimiento": "2003-08-11",
+        "puesto": "Programacion",
+        "departamento": "Sistemas"
+      },
+      {
+        "numero": 3,
+        "nombre": "Maria Fernanda",
+        "apellido": "Almaraz",
+        "fecha_nacimiento": "2004-07-16",
+        "puesto": "Derecho",
+        "departamento": "Licenciatura"
+      }
+    ]
+  }
+
+  

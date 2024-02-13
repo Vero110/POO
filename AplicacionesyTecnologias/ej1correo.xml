@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bandejaDeEntrada>
+    <correo>
+        <remitente>veronicaalmaraz59@gmail.com</remitente>
+        <destinatario>121039314@upq.edu.mx</destinatario>
+        <asunto>¡HOLA!</asunto>
+        <cuerpo>Esta es la primera actividad del día de hoy.</cuerpo>
+    </correo>
+    <correo>
+        <remitente>121039314@upq.edu.mx</remitente>
+        <destinatario>veronicaalmaraz59@gmail.com</destinatario>
+        <asunto>HOY ES JUEVES</asunto>
+        <cuerpo>Hoy es jueves, 01 de febrero.</cuerpo>
+    </correo>
+</bandejaDeEntrada>

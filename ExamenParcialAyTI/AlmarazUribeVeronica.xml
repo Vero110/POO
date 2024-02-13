@@ -1,0 +1,18 @@
+<empleados>
+  <empleado>
+    <numero>1</numero>
+    <nombre>Veronica</nombre>
+    <apellido>Almaraz</apellido>
+    <fecha_nacimiento>2003-08-11</fecha_nacimiento>
+    <puesto>Sistemas</puesto>
+    <departamento>Programación</departamento>
+  </empleado>
+  <empleado>
+    <numero>2</numero>
+    <nombre>Maeria Fernanda</nombre>
+    <apellido>Almaraz</apellido>
+    <fecha_nacimiento>2004-07-16</fecha_nacimiento>
+    <puesto>Derecho</puesto>
+    <departamento>Licenciatura</departamento>
+  </empleado>
+</empleados>
