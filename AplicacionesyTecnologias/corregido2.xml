@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?> <!-- "encoding" -->
-<texto>
-    <Titulo>XML explicado a los niños</Titulo> 
-    <!-- se corrigio la palabra "lo" a "los" y se cerró la etiqueta de titulo -->
-    <parrafo> el <abreviatura>XML</abreviatura> define como crear lenguajes de marcas.</parrafo>
-    <!-- se cerro la etiqueta de abreviatura -->
-
-    <enlace>www.example.org</enlace> <!-- cambié la etiqueta a enlace, y se cerró la etiqueta bien -->
-</texto>
